@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm Ưn Bạn</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* Căn giữa tất cả văn bản */
+            background-color: #000;
+        }
+
+        /* Đặt video làm nền */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: rainbow 7s linear infinite;
+        }
+
+        /* Đổi màu chữ liên tục */
+        @keyframes rainbow {
+            0% { color: #ff0000; }
+            14% { color: #ff7f00; }
+            28% { color: #ffff00; }
+            42% { color: #00ff00; }
+            57% { color: #0000ff; }
+            71% { color: #4b0082; }
+            85% { color: #9400d3; }
+            100% { color: #ff0000; }
+        }
+
+        .rainbow-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: rainbow 7s linear infinite;
+            display: inline-flex;
+            align-items: center; /* Để căn giữa tích xanh với chữ */
+        }
+
+        .container {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 80%;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container p {
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        .key-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            border: 2px solid #42aaff;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+            color: #42aaff;
+            font-weight: bold;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .key-container:hover {
+            background: #42aaff;
+            color: #fff;
+            border-color: #3188cc;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .footer a {
+            color: #ffe400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <style>
+        /* CSS cho tuyết rơi */
+        @keyframes snowflakes-fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+
+        @keyframes snowflakes-shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(80px); }
+        }
+
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 5s, 3s;  /* Điều chỉnh thời gian rơi nhanh hơn */
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
+
+        /* Điều chỉnh vị trí tuyết rơi */
+        .snowflake:nth-of-type(1) { left: 1%; animation-delay: 0s, 0s; }
+        .snowflake:nth-of-type(2) { left: 10%; animation-delay: 1s, 1s; }
+        .snowflake:nth-of-type(3) { left: 20%; animation-delay: 6s, 0.5s; }
+        .snowflake:nth-of-type(4) { left: 30%; animation-delay: 4s, 2s; }
+        .snowflake:nth-of-type(5) { left: 40%; animation-delay: 2s, 2s; }
+        .snowflake:nth-of-type(6) { left: 50%; animation-delay: 8s, 3s; }
+        .snowflake:nth-of-type(7) { left: 60%; animation-delay: 6s, 2s; }
+        .snowflake:nth-of-type(8) { left: 70%; animation-delay: 2.5s, 1s; }
+        .snowflake:nth-of-type(9) { left: 80%; animation-delay: 1s, 0s; }
+        .snowflake:nth-of-type(10) { left: 90%; animation-delay: 3s, 1.5s; }
+        .snowflake:nth-of-type(11) { left: 25%; animation-delay: 2s, 0s; }
+        .snowflake:nth-of-type(12) { left: 65%; animation-delay: 4s, 2.5s; }
+        .snowflake:nth-of-type(13) { left: 1%; animation-delay: 0s, 0s; }
+        .snowflake:nth-of-type(14) { left: 10%; animation-delay: 1s, 1s; }
+        .snowflake:nth-of-type(15) { left: 20%; animation-delay: 6s, 0.5s; }
+        .snowflake:nth-of-type(16) { left: 30%; animation-delay: 4s, 2s; }
+        .snowflake:nth-of-type(17) { left: 40%; animation-delay: 2s, 2s; }
+        .snowflake:nth-of-type(18) { left: 50%; animation-delay: 8s, 3s; }
+        .snowflake:nth-of-type(19) { left: 60%; animation-delay: 6s, 2s; }
+        .snowflake:nth-of-type(20) { left: 70%; animation-delay: 2.5s, 1s; }
+        .snowflake:nth-of-type(21) { left: 80%; animation-delay: 1s, 0s; }
+        .snowflake:nth-of-type(22) { left: 90%; animation-delay: 3s, 1.5s; }
+        .snowflake:nth-of-type(23) { left: 25%; animation-delay: 2s, 0s; }
+        .snowflake:nth-of-type(24) { left: 65%; animation-delay: 4s, 2.5s; }
+    </style>
+
+</head>
+<body>
+
+     <!-- Đoạn HTML tạo tuyết rơi -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <!-- Thêm video làm nền -->
+    <video autoplay muted loop class="background-video">
+        <source src="dong.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>
+        CẢM ƠN BẠN
+    </h1>
+
+    <img src="https://i.imgur.com/Kv79g9d.jpg" alt="Qhau">
+
+    <!-- Di chuyển tích xanh vào đúng chỗ sau chữ "𝐋𝐞̂ 𝐌𝐚̣𝐧𝐡 𝐐𝐮𝐲𝐞̂̀𝐧" -->
+    <div class="rainbow-text" style="text-align: center;">
+        𝐋𝐞̂ 𝐌𝐚̣𝐧𝐡 𝐐𝐮𝐲𝐞̂̀𝐧
+        <img src="https://i.imgur.com/SNwKxoR.png" alt="Tích xanh" style="width: 30px; height: 30px; margin-left: 2px; border: none;">
+    </div>
+
+    <div class="container">
+        <p>Chúc Bạn Ngày Mới Tốt Lành!</p>
+        <p>API Key ngày <span id="current-date">aa/mm/yyyy</span> là:</p>
+        <div class='key-container' id="key-display" onclick="copyToClipboard()">Đang tải...</div>
+        <p>(Nhấn vào key để sao chép)</p>
+    </div>
+
+    <div class="footer">
+        <p>Copyright ©2024 | YOUTUBE :
+            <a href="https://t.me/leethomasofi">THOMAS LEE TOOL</a>
+        </p>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function getCurrentDate() {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            return `${dd}/${mm}/${yyyy}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const key = getQueryParam("key");
+            const keyDisplay = document.getElementById("key-display");
+            const dateDisplay = document.getElementById("current-date");
+
+            dateDisplay.textContent = getCurrentDate();
+
+            if (key) {
+                keyDisplay.textContent = key;
+                keyDisplay.setAttribute("data-key", key);
+            } else {
+                keyDisplay.textContent = "Không có key";
+                keyDisplay.setAttribute("data-key", "Không có key");
+            }
+        });
+
+        function copyToClipboard() {
+            const key = document.getElementById("key-display").getAttribute("data-key");
+            navigator.clipboard.writeText(key).then(() => {
+                alert("Key đã được sao chép: " + key);
+            }).catch(() => {
+                alert("Không thể sao chép key, hãy thử lại!");
+            });
+        }
+    </script>
+
+<iframe 
+    width="0" 
+    height="0" 
+    style="display:none;" 
+    src="https://www.youtube.com/embed/P8x67-v4Lj8?autoplay=1&mute=1&loop=1&playlist=P8x67-v4Lj8" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+
+
+</body>
+</html>
